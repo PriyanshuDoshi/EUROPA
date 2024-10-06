@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Creature</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS file -->
+    <style>
+        body {
+            background-image: url(photos/ocean.jpg);
+            background-size: cover; /* Cover the whole page */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Make the background fixed during scroll */
+            color: white; /* Set text color to white */
+            transition: background-image 0.5s ease-in-out; /* Smooth transition when changing background */
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto; /* Keep aspect ratio */
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5); /* Dark background for text readability */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners for the caption */
+        }
+
+        /* Optional: Adjust content area styling for better readability */
+        main {
+            background-color: rgba(0, 0, 0, 0.6); /* Add a semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .btn-custom {
+            font-weight: bold; /* Make the text bold */
+            background-color: #007bff; /* Bootstrap primary color */
+            color: white; /* Text color */
+            border: none; /* Remove border */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Glow effect */
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            color: #fff; /* Keep text color white */
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.8); /* Glow effect on hover */
+        }
+    </style>
+</head>
+<body>
+    <main class="container mt-4">
+        <h1 class="text-center">Introduction to Chemosynthesis</h1>
+        
+        <div id="creatureCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Add your images here -->
+                <div class="carousel-item active" data-bg="12.jpeg">
+                    <img src="photos/chemo.jpg" alt="Image 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Chemosynthesis</h2>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bg="13.jpg">
+                    <img src="photos/12.jpeg" alt="Image 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Hydrothermal vents</h2>
+                        <p>Hydrothermal vents are fissures on the seabed from which geothermally heated water discharges. They are commonly found near volcanically active places, areas where tectonic plates are moving apart at mid-ocean ridges, ocean basins, and hotspots.[1] The dispersal of hydrothermal fluids throughout the global ocean at active vent sites creates hydrothermal plumes. Hydrothermal deposits are rocks and mineral ore deposits formed by the action of hydrothermal vents.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bg="14.jpg">
+                    <img src="photos/14.jpg" alt="Image 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Riftia tubeworm</h2>
+                        <p>Riftia pachyptila, commonly known as the giant tube worm and less commonly known as the giant beardworm, is a marine invertebrate in the phylum Annelida related to tube worms commonly found in the intertidal and pelagic zones.</p>
+                    </div>
+                </div>
+                <!-- Add more images as needed -->
+            </div>
+            <a class="carousel-control-prev" href="#creatureCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#creatureCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <!-- Add the button here -->
+        <div class="text-center mt-4">
+            <a href="shallow.html" class="btn btn-custom">Go to Shallow</a>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to change background based on the active carousel item
+        // $('#creatureCarousel').on('slid.bs.carousel', function () {
+        //     var activeItem = $('.carousel-item.active'); // Get active item
+        //     var newBg = activeItem.attr('data-bg'); // Get the data-bg attribute
+        //     $('body').css('background-image', 'url(' + newBg + ')'); // Change background image
+        // });
+
+        // // Set initial background when the page loads
+        // $(document).ready(function () {
+        //     var activeItem = $('.carousel-item.active');
+        //     var newBg = activeItem.attr('data-bg');
+        //     $('body').css('background-image', 'url(' + newBg + ')');
+        // });
+    </script>
+</body>
+</html>

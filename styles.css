@@ -1,0 +1,209 @@
+/* Reset some default browser styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: black; /* Set background color to black */
+}
+
+/* Full-Screen Welcome Section */
+#welcome-screen {
+    height: 100vh;
+    width: 100vw;
+    background: url('photos/europa2.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+#welcome-screen h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Updated font */
+    color: #00aaff; /* Light blue color */
+    text-shadow: 2px 2px 4px #000000; /* Adding shadow for better readability */
+}
+
+#enter-btn {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: #0074D9; /* Blue button */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Added transition for background color, transform, and box-shadow */
+}
+
+#enter-btn:hover {
+    background-color: #005bb5; /* Darker blue on hover */
+    box-shadow: 0 0 15px #00aaff; /* Glowing effect */
+}
+
+#enter-btn:active {
+    transform: scale(0.95); /* Scale down slightly on click */
+}
+
+/* Hide main content initially */
+.hidden {
+    display: none;
+}
+
+/* Main content styling */
+header {
+    background-color: #001f3f; /* Dark blue background */
+    padding: 20px;
+    text-align: center;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Updated font */
+    color: #00aaff; /* Light blue color */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav a {
+    color: #00aaff; /* Light blue color */
+    text-decoration: none;
+    margin: 0 15px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Updated font */
+}
+
+section {
+    padding: 20px;
+    color: white;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Updated font */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #001f3f; /* Dark blue background */
+    color: #00aaff; /* Light blue color */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Updated font */
+}
+
+/* Background image and full-screen for the planet Europa */
+body {
+    background-color: black; /* Set background color to black */
+}
+
+/* Transition when the site is entered */
+#main-content {
+    transition: opacity 1s ease-in;
+    opacity: 0;
+}
+
+#main-content.show {
+    opacity: 1;
+}
+
+/* Map container styling */
+#map-container {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Center the image */
+    height: 100vh; /* Make the container full height */
+    background-color: black; /* Ensure map container has a black background */
+}
+
+#europa-map {
+    width: 80%; /* Adjust width as needed */
+    height: auto;
+    max-width: 800px; /* Max width to keep it responsive */
+    position: relative; /* Needed for absolute positioning of map-area */
+}
+
+.map-area {
+    position: absolute; /* Use absolute positioning */
+    width: 50px; /* Adjust size based on your needs */
+    height: 50px; /* Adjust size based on your needs */
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent overlay */
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.map-area:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Brighten on hover */
+    cursor: pointer;
+}
+
+#popup-box {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background for better contrast */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
+    transition: transform 0.3s ease; /* Smooth scaling on show */
+}
+
+#popup-box.show {
+    transform: translate(-50%, -50%) scale(1.05); /* Slight scale up when shown */
+}
+
+#popup-image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+#popup-content {
+    text-align: center; /* Center text in popup */
+}
+
+#close-btn {
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: #ff4d4d; /* Red color for the close button */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#close-btn:hover {
+    background-color: #ff1a1a; /* Darker red on hover */
+    transform: scale(1.05); /* Slight scale up on hover */
+}
+
+#popup-box.hidden {
+    display: none;
+}
+
+/* Next Page Button Styling */
+#next-page-btn {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: #510a4a; /* Green button */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Added transition */
+}
+
+#next-page-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    box-shadow: 0 0 15px #28a745; /* Glowing effect */
+}
+
+#next-page-btn:active {
+    transform: scale(0.95); /* Scale down slightly on click */
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Europa Exploration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Full-Screen Welcome Section -->
+    <div id="welcome-screen">
+        <h1>Welcome to Europa</h1>
+        <button id="enter-btn" onclick="enterSite()">Explore</button>
+        <audio id="transition-sound" src="" preload="auto"></audio>
+    </div>
+
+    <!-- Main content is hidden initially -->
+    <div id="main-content" class="hidden">
+        
+        <main>
+            
+            <section id="interactive-model">
+                <h2 align="center">THIS IS A MAP WITH DIFFERENT REGIONS OF EUROPA HAVING DIFFERENT LIFE HABITAT</h2>
+                <br>
+                <br>
+                <br>
+                <div id="map-container">
+                    <img id="europa-map" src="photos/europa_map.png" alt="Europa Map">
+                    <div class="map-area" style="top: 23%; left: 53%;" onclick="showPopup('Shallow Water: The shallow water region is typically characterized by depths ranging from a few centimeters to several meters, found in lakes, rivers, and coastal areas.')"></div>
+                    <div class="map-area" style="top: 67%; left: 34%;" onclick="showPopup('Kelp Forest: This area has a rich ecosystem around hydrothermal vents.', 'image2.jpg')"></div>
+                    <div class="map-area" style="top: 13.5%; left: 41.4%;" onclick="showPopup('Luminance Biome: This area has a rich ecosystem around hydrothermal vents.', 'image3.jpg')"></div>
+                    <div class="map-area" style="top: 47%; left: 47%;" onclick="showPopup('Coral Riff: coral riff is a second stage of Europa where different beautiful types of corals such as pipe coral and mushroom coral')"></div>
+                </div>
+
+
+                <!-- Next Page Button -->
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+
+                <div align="center" style="margin-top: 20px;">
+                    <button id="next-page-btn" onclick="window.location.href='info_creature.html'">Next Page</button>
+                </div>
+
+                <div id="popup-box" class="hidden">
+                    <div id="popup-content">
+                        <h3>Area Information</h3>
+                        <img id="popup-image" src="" alt="">
+                        <p id="popup-paragraph">This is a detailed description of the selected area in Europa, discussing its unique features and significance in the context of exploration and research.</p>
+                    </div>
+                    <button id="close-btn" onclick="closePopup()">✖ Close</button>
+                </div>
+            </section>
+        </main>
+        <br>
+        <br>
+        <br>
+        <footer>
+            <p>&copy; 2024 Europa Exploration</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

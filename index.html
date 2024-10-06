@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entry Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your CSS file here if needed -->
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column; /* Change to column to stack items */
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            z-index: 100;
+            margin-bottom: 20px; /* Space between text and button */
+             /* Initially hidden */
+        }
+
+        #enter-btn {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background-color: #310071; /* Darker button color */
+            border: none;
+            border-radius: 10px;
+            color: white;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Added transition */
+            z-index: 1; /* Above stars */
+        }
+
+        #enter-btn:hover {
+            background-color: #ca79f3; /* Slightly lighter on hover */
+            box-shadow: 0 0 15px #bd9de5; /* Glowing effect */
+        }
+
+        #enter-btn:active {
+            transform: scale(0.95); /* Scale down slightly on click */
+        }
+
+        /* Skip button styling */
+        #skip-btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: red; /* Skip button color */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            position: absolute; /* Position it over the video */
+            top: 20px; /* Adjust position */
+            right: 20px; /* Adjust position */
+            z-index: 3; /* Above video */
+            display: none; /* Initially hidden */
+        }
+
+        /* Stars styling */
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: twinkle 1.5s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        /* Video styling */
+        #intro-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover entire screen */
+            z-index: 2; /* Behind other elements */
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <h1>Are you ready to explore another form of life?</h1>
+    <br><br><br>
+    <button id="enter-btn" onclick="playVideo()">Let's goo!!</button>
+    
+    <button id="skip-btn" onclick="skipVideo()">Skip Video</button> <!-- Skip button -->
+
+    <video id="intro-video" autoplay>
+        <source src="video2.mp4" type="video/mp4"> <!-- Replace with your video file path -->
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        // Function to create stars
+        function createStars(num) {
+            const body = document.body;
+            for (let i = 0; i < num; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 4 + 3; // Random size for stars
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.animationDuration = (Math.random() * 1 + 0.5) + 's'; // Random twinkle duration
+                body.appendChild(star);
+            }
+        }
+
+        // Create 100 stars
+        createStars(100);
+
+        // Function to play the video
+        function playVideo() {
+            document.getElementById('enter-btn').style.display = 'none'; // Hide the button
+            document.querySelector('h1').style.display = 'none'; // Hide the heading
+            const video = document.getElementById('intro-video');
+            video.style.display = 'block'; // Show the video
+            video.play(); // Play the video
+            document.getElementById('skip-btn').style.display = 'block'; // Show the skip button
+
+            // Redirect after the video ends
+            video.onended = () => {
+                location.href = 'welcome.html'; // Redirect to welcome screen
+            };
+        }
+
+        // Function to skip the video
+        function skipVideo() {
+            const video = document.getElementById('intro-video');
+            video.pause(); // Pause the video
+            video.currentTime = video.duration; // Set the current time to the end
+            location.href = 'welcome.html'; // Redirect to welcome screen
+        }
+    </script>
+</body>
+</html>
